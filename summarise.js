@@ -51,10 +51,10 @@ const generateNotes = async (videoTranscript) => {
         const response = await fetch('https://chatgpt-42.p.rapidapi.com/chat', {
             method: 'POST',
             headers: {
-                // 'x-rapidapi-key': 'b8086da104msh6283292ae5fcea4p1dd0c3jsn9a21cfefd310',
-                // 'x-rapidapi-host': 'chatgpt-42.p.rapidapi.com',
-              'x-rapidapi-key': '66eb7c54f0mshe8e6413d5f70797p108a5djsn7352d01077d6',
-		'x-rapidapi-host': 'chatgpt-42.p.rapidapi.com',
+                'x-rapidapi-key': 'b8086da104msh6283292ae5fcea4p1dd0c3jsn9a21cfefd310',
+                'x-rapidapi-host': 'chatgpt-42.p.rapidapi.com',
+        //       'x-rapidapi-key': '66eb7c54f0mshe8e6413d5f70797p108a5djsn7352d01077d6',
+		// 'x-rapidapi-host': 'chatgpt-42.p.rapidapi.com',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -94,7 +94,6 @@ const jsonContent = jsonMatch ? jsonMatch[1] : rawContent; // Extract JSON if fo
         return [];
     }
 };
-
 
 
 const generateQuestions = async (notes, examType) => {
@@ -190,8 +189,6 @@ const generateQuestions = async (notes, examType) => {
         return [];
     }
 };
-
-
 
 const generateRelevanceNotes = async (videoTranscript, userPrompt) => {
     try {
@@ -297,8 +294,6 @@ const generateRelevanceNotes = async (videoTranscript, userPrompt) => {
         return { high_relevance: [], medium_relevance: [], low_relevance: [] };
     }
 };
-
-
 
 app.post("/convert-mp3", async (req, res) => {
     try {
