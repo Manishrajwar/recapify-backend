@@ -21,8 +21,6 @@ cloudinary.config({
 });
 
 
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("AIzaSyC6ht-dggAEW9DerfPGDK1fJUGhedlw7so");
 
 const uploadFileFromStream = async (responseStream) => {
   return new Promise((resolve, reject) => {
